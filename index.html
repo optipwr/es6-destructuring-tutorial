@@ -1,0 +1,83 @@
+<<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+
+	<script>
+		//ES5 Version
+		var expense = {
+			type: 'Business',
+			amount: '$45 USD'
+		};
+
+		var type = expense.type;
+		var amount = expense.amount;
+
+		//ES6
+		const { type } = expense;
+		const { amount } = expense;
+
+		//or just..
+		const { type, amount } = expense;
+
+		//Lesson Two
+
+		var savedFile = {
+			extension: 'jpg',
+			name: 'repost',
+			size: 14040
+		};
+
+		function fileSummary({ name, extension, size }) {
+			return `The file ${name}.${extension} is of size ${size}.`;
+		}
+
+		fileSummary(savedFile);
+
+		//Lesson 3
+		const companies = [
+			'Google',
+			'Facebook',
+			'Uber'
+		];
+
+		const [ name1, name2, name3 ] = companies;
+		const [ name1, ...rest ] = companies;
+
+		console.log(rest);  //spread operator assigns remaining indexes in array to variable name rest
+
+		//Lesson 4
+		const companies = [
+			{ name: 'Google', location: 'Mountain View' },
+			{ name: 'Facebook', location: 'Menlo Park' },
+			{ name: 'Uber', location: 'San Francisco' }
+		];
+
+		var location = companies[0].location; //Old way
+		//ES6 way
+		const [{ location }] = companies;
+
+		//Lesson 5
+		function signup({ username, password, email, dateOfBirth, city }) {
+			//Create new user
+		}
+
+		signup('myname', 'mypassword', 'myemail@aol.com', '1/1/2004', 'Denver');
+
+		const user = {
+			username: 'myname',
+			password: 'mypassword',
+			email: 'myemail@aol.com',
+			dateOfBirth: '1/1/2004',
+			city: 'Denver'
+		}
+
+	</script>
+
+</body>
+</html>
